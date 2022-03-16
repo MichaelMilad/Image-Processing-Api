@@ -5,11 +5,13 @@ const request = supertest(app);
 
 describe('Test endpoint response', () => {
   it('Should Respond to "/image" with status code of 200', async () => {
-    const response = await request.get('/images?name=dummy');
+    const response = await request.get(
+      '/images?name=dummy&width=200&height=300'
+    );
     expect(response.status).toBe(200);
   });
 
-  it('Should respond to "/image" with status code of 400 if image name was not entered', async () => {
+  it('Should Respond to "/image" with status code of 400 if image name was not entered', async () => {
     const response = await request.get('/images');
     expect(response.status).toBe(400);
   });

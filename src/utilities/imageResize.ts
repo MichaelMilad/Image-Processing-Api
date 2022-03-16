@@ -9,7 +9,10 @@ async function imageResize(
   imgPath: string,
   extension: string
 ): Promise<void> {
-  const processedPath = path.join(
+  if (!fs.existsSync(path.join(__dirname, '../../images/thumbnails'))) {
+    fs.mkdirSync(path.join(__dirname, '../../images/thumbnails'));
+  }
+  const processedPath: string = path.join(
     __dirname,
     `../../images/thumbnails/${name}_${width}_${height}.${extension}`
   );
