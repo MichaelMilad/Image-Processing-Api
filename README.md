@@ -16,7 +16,9 @@ Available Script:
     "test": "npx tsc && npx jasmine",
     "jasmine":"npx jasmine",
     "start": "npm run build && nodemon build/index.js",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "format":"prettier --write src/**/*.ts"
+    
    
 Images Width defaults to 1000 if not entered , same goes for Height
 
